@@ -14,7 +14,8 @@ h2,
   opacity: 0.7;
   text-transform: capitalize;
 }
-.container {
+.container,
+.open-source-link {
   margin-left: 15px;
   font-family: "Bebas Neue", cursive;
   font-family: "Roboto", sans-serif;
