@@ -1,0 +1,74 @@
+h1,
+h2,
+.current-weather {
+  text-shadow: 1px 1px 2px white;
+}
+h1 {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+h2,
+.current-forcast {
+  font-size: 20px;
+  opacity: 0.7;
+  text-transform: capitalize;
+}
+.container {
+  margin-left: 15px;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Roboto", sans-serif;
+}
+.current-temp {
+  font-size: 30px;
+  font-weight: 400;
+}
+.units {
+  position: relative;
+  top: -10px;
+}
+.current-forcast {
+  margin-left: 0;
+}
+.city-search {
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.search {
+  position: relative;
+  left: 200px;
+  top: -30px;
+}
+.click-search,
+.button {
+  background-color: #0b5ed7;
+  color: #d8fff9;
+  border-color: #0b5ed7;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.weather-current-location {
+  position: relative;
+  left: 277px;
+  top: -60px;
+}
+
+.rain {
+  font-size: 50px;
+}
+.card {
+  margin: 10px;
+  padding: 10px;
+  border: solid 2px;
+  border-radius: 7px;
+  background: linear-gradient(
+    -180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  max-width: 60%;
+}
+.weather-sub {
+  font-size: 20px;
+  font-weight: 400;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Weather 🌞</title>
+    <script
+      src="https://kit.fontawesome.com/a88c5029a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 id="city"></h1>
+        <h2 id="current-date">May 22nd, 9.32am</h2>
+
+        <div class="current-forcast">
+          <i class="fa-solid fa-cloud-rain rain-main"></i>
+        </div>
+
+        <div class="float-left">
+          <span class="current-temp" id="temperature"></span>
+          <span class="units">
+            <a href="#" id="celsius">°C</a> |
+            <a href="#" id="fahrenheit">°F</a>
+          </span>
+        </div>
+
+        <form>
+          <input
+            type="text"
+            placeholder="Type a city..."
+            id="city-input"
+            class="city-search"
+          />
+        </form>
+
+        <form class="search" id="search-button">
+          <input type="submit" value="Search" class="click-search" />
+        </form>
+
+        <span class="weather-current-location">
+          <button class="button" id="current-location-button">
+            Weather in your current location
+          </button>
+        </span>
+
+        <div class="row weather-sub">
+          <div class="col-2">
+            Monday
+            <br \ />
+            H:19° L:15°
+            <br \ />
+            <i class="fa-solid fa-cloud-rain rain-sub"></i>
+          </div>
+          <div class="col-2">
+            Tuesday
+            <br \ />
+            H:19° L:15°
+            <br \ />
+            <i class="fa-solid fa-cloud-rain rain-sub"></i>
+          </div>
+          <div class="col-2">
+            Wednesday
+            <br \ />
+            H:21° L:13°
+            <br \ />
+            <i class="fa-solid fa-cloud-rain rain-sub"></i>
+          </div>
+          <div class="col-2">
+            Thursday
+            <br \ />
+            H:20° L:14°
+            <br \ />
+            <i class="fa-solid fa-cloud-sun-rain rainsun-sub"></i>
+          </div>
+          <div class="col-2">
+            Friday
+            <br \ />
+            H:22° L:13°
+            <br \ />
+            <i class="fa-solid fa-sun sun-sub"></i>
+          </div>
+          <div class="col-2">
+            Saturday
+            <br \ />
+            H:23° L:14°
+            <br \ />
+            <i class="fa-solid fa-sun sun-sub"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
