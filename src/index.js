@@ -66,6 +66,12 @@ function retrieveWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  document.querySelector("#wind").innerHTML =
+    `Wind: ${Math.round(response.data.wind.speed)}km/h`s;
+  console.log(response);
 }
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("submit", searchForCity);
