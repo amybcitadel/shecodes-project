@@ -31,6 +31,10 @@ h2,
 .current-forcast {
   margin-left: 0;
 }
+ul {
+  font-size: small;
+}
+}
 .city-search {
   border-radius: 4px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -58,6 +62,7 @@ h2,
   font-size: 50px;
 }
 .card {
+  max-width: 600px;
   margin: 10px;
   padding: 10px;
   border: solid 2px;
