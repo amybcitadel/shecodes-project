@@ -33,15 +33,22 @@
         <div class="current-forcast">
           <i class="fa-solid fa-cloud-rain rain-main"></i>
         </div>
-
-        <div class="float-left">
-          <span class="current-temp" id="temperature"></span>
-          <span class="units">
-            <a href="#" id="celsius">°C</a> |
-            <a href="#" id="fahrenheit">°F</a>
-          </span>
+        <div class="row">
+          <div class="col-3 float-left">
+            <span class="current-temp" id="temperature"></span>
+            <span class="units">
+              <a href="#" id="celsius">°C</a> |
+              <a href="#" id="fahrenheit">°F</a>
+            </span>
+          </div>
+          <div class="col-3">
+            <ul>
+              <li id="precipitation">Precipitation:</li>
+              <li id="humidity">Humidity:</li>
+              <li id="wind">Wind:</li>
+            </ul>
+          </div>
         </div>
-
         <form>
           <input
             type="text"
