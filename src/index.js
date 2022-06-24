@@ -1,5 +1,6 @@
 // Date feature
 let currentDate = new Date();
+
 function formatDate(currentDate) {
   let hours = currentDate.getHours();
   if (hours < 10) {
@@ -72,7 +73,7 @@ function retrieveWeather(response) {
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )}km/h`;
-  console.log(response);
+  celsiusTemp = response.data.main.temp;
 }
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("submit", searchForCity);
@@ -92,3 +93,28 @@ function getCurrentLocation(event) {
 
 let currentWeatherButton = document.querySelector("#current-location-button");
 currentWeatherButton.addEventListener("click", getCurrentLocation);
+// units feature
+function showImperial(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celciusTemp * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showMetric(event) {
+  event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemp);
+}
+
+let celciusTemp = null;
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showImperial);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", showMetric);

@@ -28,7 +28,7 @@
     <div class="container">
       <div class="card">
         <h1 id="city"></h1>
-        <h2 id="current-date">May 22nd, 9.32am</h2>
+        <h2 id="current-date"></h2>
 
         <div class="current-forcast">
           <i class="fa-solid fa-cloud-rain rain-main"></i>
@@ -43,14 +43,13 @@
             </span>
             <span class="current-temp" id="temperature"></span>
             <span class="units">
-              <a href="#" id="celsius">°C</a> |
+              <a href="#" id="celsius" class="active">°C</a> |
               <a href="#" id="fahrenheit">°F</a>
             </span>
           </div>
 
           <div class="col-3">
             <ul>
-              <li id="precipitation">Precipitation:</li>
               <li id="humidity">Humidity:</li>
               <li id="wind">Wind:</li>
             </ul>
@@ -71,7 +70,7 @@
 
         <span class="weather-current-location">
           <button class="button" id="current-location-button">
-            Weather in your current location
+            Weather in your location
           </button>
         </span>
 

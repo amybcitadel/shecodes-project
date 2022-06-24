@@ -26,12 +26,13 @@ ul {
   font-family: "Roboto", sans-serif;
 }
 .current-temp {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 400;
 }
 .units {
   position: relative;
   top: -10px;
+  font-size: 12px;
 }
 .current-forcast {
   margin-left: 0;
@@ -80,4 +81,9 @@ ul {
   display: block;
   margin-left: 15px;
   font-size: 12px;
+}
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
 }
