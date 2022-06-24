@@ -74,7 +74,13 @@ function retrieveWeather(response) {
     response.data.wind.speed
   )}km/h`;
   celsiusTemp = response.data.main.temp;
+  console.log(response);
+  let mainIcon = response.data.weather[0].icon;
+  document
+    .querySelector("#main-image")
+    .setAttribute("src", `http://openweathermap.org/img/wn/${mainIcon}@2x.png`);
 }
+
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("submit", searchForCity);
 
