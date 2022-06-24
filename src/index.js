@@ -2,11 +2,10 @@
 let currentDate = new Date();
 
 function formatDate(currentDate) {
-  let hours = currentDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -42,6 +41,7 @@ let month = months[currentDate.getMonth()];
 let year = currentDate.getFullYear();
 let hours = currentDate.getHours();
 let minutes = currentDate.getMinutes();
+formatDate();
 
 let pageDate = document.querySelector("#current-date");
 
