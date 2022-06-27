@@ -1,28 +1,3 @@
-//display forcast
-function displayForecast() {
-  let weatherForecast = document.querySelector("#weather-forecast");
-
-  let forecastHTML = `<div class="row weather-sub">`;
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `       
-          <div class="col-2">
-              <div class="forecast-day">${day}</div>
-              <span class="forecast-max"> 19° </span>
-              |
-              <span class="forecast-min">15°</span>
-              <br \ />
-              <i class="fa-solid fa-cloud-rain rain-sub"></i>
-            </div>
-          
-        `;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  weatherForecast.innerHTML = forecastHTML;
-}
-
 // Date feature
 let currentDate = new Date();
 
@@ -72,6 +47,31 @@ let pageDate = document.querySelector("#current-date");
 
 pageDate.innerHTML = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
 
+//display forcast
+function displayForecast(response) {
+  let forecastResponse = response.data.daily;
+
+  let weatherForecast = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row weather-sub">`;
+  forecastResponse.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `       
+          <div class="col-2">
+              <div class="forecast-day">${forecastDay.dt}</div>
+              <span class="forecast-max"> ${forecastDay.temp.max} </span>
+              |
+              <span class="forecast-min">${forecastDay.temp.min}</span>
+              <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
+            </div>
+          
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  weatherForecast.innerHTML = forecastHTML;
+}
+
 // Search City feature
 function searchForCity(event) {
   event.preventDefault();
@@ -99,7 +99,6 @@ function retrieveWeather(response) {
     response.data.wind.speed
   )}km/h`;
   celsiusTemp = response.data.main.temp;
-  console.log(response);
   let mainIcon = response.data.weather[0].icon;
   document
     .querySelector("#main-image")
@@ -109,9 +108,8 @@ function retrieveWeather(response) {
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("submit", searchForCity);
 
-displayForecast();
-
 search("Brisbane");
+
 //current weather feature
 function currentCity(position) {
   let apiKey = "86acf2ef4ede1754f0e280629154b360";
@@ -151,3 +149,5 @@ fahrenheit.addEventListener("click", showImperial);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showMetric);
+
+displayForecast();
