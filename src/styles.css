@@ -70,7 +70,11 @@ ul {
   padding: 10px;
   border: solid 2px;
   border-radius: 7px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
   max-width: 60%;
 }
 .weather-sub {
@@ -86,4 +90,9 @@ ul {
   color: black;
   cursor: default;
   text-decoration: none;
+}
+
+.forcast-min,
+.forcast-max {
+  font-size: 15px;
 }
