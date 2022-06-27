@@ -1,26 +1,26 @@
 //display forcast
-function displayForcast() {
-  let weatherForcast = document.querySelector("#weather-forcast");
+function displayForecast() {
+  let weatherForecast = document.querySelector("#weather-forecast");
 
-  let forcastHTML = `<div class="row weather-sub">`;
+  let forecastHTML = `<div class="row weather-sub">`;
   let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
+    forecastHTML =
+      forecastHTML +
       `       
           <div class="col-2">
-              <div class="forcast-day">${day}</div>
-              <span class="forcast-max"> 19° </span>
+              <div class="forecast-day">${day}</div>
+              <span class="forecast-max"> 19° </span>
               |
-              <span class="forcast-min">15°</span>
+              <span class="forecast-min">15°</span>
               <br \ />
               <i class="fa-solid fa-cloud-rain rain-sub"></i>
             </div>
           
         `;
   });
-  forcastHTML = forcastHTML + `</div>`;
-  weatherForcast.innerHTML = forcastHTML;
+  forecastHTML = forecastHTML + `</div>`;
+  weatherForecast.innerHTML = forecastHTML;
 }
 
 // Date feature
@@ -109,7 +109,7 @@ function retrieveWeather(response) {
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("submit", searchForCity);
 
-displayForcast();
+displayForecast();
 
 search("Brisbane");
 //current weather feature
