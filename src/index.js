@@ -136,8 +136,8 @@ function showImperial(event) {
 
 function showMetric(event) {
   event.preventDefault();
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsiusTemp);
 }
