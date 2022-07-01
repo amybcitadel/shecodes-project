@@ -96,3 +96,7 @@ ul {
 .forecast-max {
   font-size: 15px;
 }
+
+.weather-forecast {
+  text-align: center;
+}
