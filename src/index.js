@@ -60,10 +60,16 @@ function displayForecast(response) {
       `       
           <div class="col-2">
               <div class="forecast-day">${forecastDay.dt}</div>
-              <span class="forecast-max"> ${forecastDay.temp.max} </span>
+              <span class="forecast-max"> ${Math.round(
+                forecastDay.temp.max
+              )} </span>
               |
-              <span class="forecast-min">${forecastDay.temp.min}</span>
-              <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
+              <span class="forecast-min">${Math.round(
+                forecastDay.temp.min
+              )}</span>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="">
             </div>
           
         `;
@@ -72,6 +78,12 @@ function displayForecast(response) {
   weatherForecast.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "86acf2ef4ede1754f0e280629154b360";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(displayForecast);
+}
 // Search City feature
 function searchForCity(event) {
   event.preventDefault();
@@ -103,6 +115,8 @@ function retrieveWeather(response) {
   document
     .querySelector("#main-image")
     .setAttribute("src", `http://openweathermap.org/img/wn/${mainIcon}@2x.png`);
+
+  getForecast(response.data.coord);
 }
 
 let searchButton = document.querySelector("#search-button");
@@ -149,5 +163,3 @@ fahrenheit.addEventListener("click", showImperial);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showMetric);
-
-displayForecast();
