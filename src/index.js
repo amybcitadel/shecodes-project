@@ -48,18 +48,30 @@ let pageDate = document.querySelector("#current-date");
 pageDate.innerHTML = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
 
 //display forcast
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecastResponse = response.data.daily;
 
   let weatherForecast = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row weather-sub">`;
-  forecastResponse.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `       
+  forecastResponse.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `       
           <div class="col-2">
-              <div class="forecast-day">${forecastDay.dt}</div>
+              <div class="forecast-day">${formatForecastDay(
+                forecastDay.dt
+              )}</div>
+         
               <span class="forecast-max"> ${Math.round(
                 forecastDay.temp.max
               )} </span>
@@ -73,6 +85,7 @@ function displayForecast(response) {
             </div>
           
         `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   weatherForecast.innerHTML = forecastHTML;
