@@ -122,7 +122,7 @@ function retrieveWeather(response) {
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
-  )}km/h`;
+  )}m/sec`;
   celsiusTemp = response.data.main.temp;
   let mainIcon = response.data.weather[0].icon;
   document
