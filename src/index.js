@@ -157,7 +157,7 @@ function showImperial(event) {
   let temperature = document.querySelector("#temperature");
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
-  let fahrenheitTemperature = (celciusTemp * 9) / 5 + 32;
+  let fahrenheitTemperature = celsiusTemp * 1.8 + 32;
   temperature.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -169,7 +169,7 @@ function showMetric(event) {
   temperature.innerHTML = Math.round(celsiusTemp);
 }
 
-let celciusTemp = null;
+let celsiusTemp = null;
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showImperial);
